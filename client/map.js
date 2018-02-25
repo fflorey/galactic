@@ -14,7 +14,20 @@
 
 // import $ from 'jquery';   // does not work in browser, only EDGE
 
-const hashKey = 'hashValueOfPlayer';
+const STATUS_CODES = {
+  OK: 0, FATAL_ERROR: 1, CLIENT_ERROR: 2, SYSTEM_ERROR: 3
+};
+
+const ERROR_CODES = {
+  NO_ERROR: 0, GAME_ALLREADY_RUNNING: 1, SEATS_TAKEN: 2, INVALID_HASH: 3, PARAMETER_MISSING: 4
+};
+
+const responseMsg = {
+  status: STATUS_CODES.OK,
+  errorcode: ERROR_CODES.NO_ERROR,
+  text: 'ok'
+};
+
 
 (function () {
   'use strict'
@@ -85,7 +98,6 @@ const hashKey = 'hashValueOfPlayer';
 
   function drawUniverse() {
     let u = JSON.parse(localStorage.getItem('map'));
-    let playername = localStorage.getItem('pname');
     console.log('Ok, read universe from local storage: ' + JSON.stringify(u));
     let universe = new Universe(u.age, u.maxx, u.maxy, u.planets);
     console.log('Ok, read universe from local storage: ' + JSON.stringify(u));
@@ -113,8 +125,8 @@ const hashKey = 'hashValueOfPlayer';
       htmlString += '|';
     }
     htmlString += '<br><div><nobr>--------------------------------------UNIVERSE------------------------------------</nobr></div></div>';
-    $("#mapplaceholder").append(htmlString);
-  };
+    $('#mapplaceholder').append(htmlString);
+  }
 
   function drawPlanetList() {
     let htmlString = '<br><table class="tg"><tr><th class="tg-031e">Planet</th><th class="th">Owner</th>\
@@ -139,19 +151,51 @@ const hashKey = 'hashValueOfPlayer';
       }
     }
     htmlString += '</table>';
-
-    $("#planetsplaceholder").append(htmlString);
+    $('#planetsplaceholder').append(htmlString);
   }
 
   drawUniverse();
   drawPlanetList();
 
-})()
+})();
 
 function newCmd() {
   let from = $('#from_planet').val();
   let to = $('#to_planet').val();
   let ships = $('#ships').val();
-  console.log('X: ' + from + ' to: ' +  to + ' with ' + ships + ' <');
-  
+  callRestNewCmd(from, to, ships).then ( result => {
+    console.log('result: ' + result);
+  }).catch ( (err) => {
+    console.error('err :' + err);
+  });
+  console.log('X: ' + from + ' to: ' +  to + ' with ' + ships + ' <');  
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// all functions to call the server
+
+function callRestNewCmd( from, to, ships) {
+  let hash = localStorage.getItem('hash');
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3000/geserver/newcmd/' + hash + '?from=' + from + '&destination=' + to + 'ships=' + ships,
+      crossDomain: true, success: (result) => {
+        console.log('status: >' + result.status + '< error: ' + result.error);
+        if (result.status != STATUS_CODES.OK) {
+          // something went wrong, aber so richtig
+          console.error(result.text);
+          return resolve(result);
+        } else {
+          return resolve(result);
+        }
+      }, error: function (xhr, ajaxOptions, thrownError) {
+        console.error('error!');
+        return reject({ error: 2, message: thrownError });
+      }
+    });
+  });
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
