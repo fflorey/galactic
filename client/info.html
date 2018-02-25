@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- comment -->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Info - PWA simple</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <nav class="blue-grey lighten-2" role="navigation">
+    <div class="nav-wrapper container"><!-- a id="logo-container" href="#" class="brand-logo">Logo</a -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./index.html">Main Page</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/index.html">Main Page</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center black-text">Temperature App</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A simple progressive web app to demonstrate basic capabilities</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="section">
+        <h5 class="header col s12 light">This app shows sensor values, which are stored in the cloud. To gain 
+          access to that data, you need to enter a password first. This password is than stored on your device.</h5>
+      </div>
+  </div>
+
+  <footer class="page-footer blue-grey darken-2">
+   
+    <div class="footer-copyright">
+      <div class="container">
+      Simple PWA, made by <a class="orange-text text-lighten-3" href="https://thinkitdifferent-de.blogspot.de/">G. H.F. Florey</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

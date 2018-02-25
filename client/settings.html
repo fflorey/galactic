@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- comment -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Info - PWA simple</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <nav class="blue-grey lighten-2" role="navigation">
+    <div class="nav-wrapper container">
+      <!-- a id="logo-container" href="#" class="brand-logo">Logo</a -->
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="./index.html">Start</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <a href="/index.html">Start</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <br>
+      <div class="row">
+        <h5 class="header center black-text">Enter your global password here</h5>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">vpn_key</i>
+            <input id="password" type="text" class="validate">
+            <label for="pw">Global Password</label>
+          </div>
+          <div>
+            <a class="waves-effect waves-light btn" onclick="savePassword();">Save password</a>
+          </div>
+          <br>
+          <br>
+    
+        </form>
+        <form class="col s12">
+          <div class="row center">
+            <div id="slidecontainer">
+                <h5 class="header center black-text" id="show_number">number of data entries to show: 10</h5>
+                <div class="row center valign-wrapper">
+                <h5 class="col s2 right-align">1</h5>
+              <input onchange="changeValue();" style="height:50pt" type="range" min="1" max="30" value="10" class="col s6 slider" id="myRange">
+              <h5 class="col s2 left-align">30</h5>
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br>
+    <br>
+
+  </div>
+  </div>
+
+  <footer class="page-footer blue-grey darken-2">
+
+    <div class="footer-copyright">
+      <div class="container">
+        Simple PWA, made by
+        <a class="orange-text text-lighten-3" href="https://thinkitdifferent-de.blogspot.de/">G.H.F. Florey</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="./settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+process:
+
+gameserver starts
+
+-> universe initialized (for x players)
+
+player registers 
+-> hash sent to player
+(player client) => wait for gamestart
+
+player registers
+-> hash sent to player
+(player client) => wait for gamestart
+
+...
+
+optional: gameserver sends status to clients on how many registered players
+
+(endless) -> player client (pc) sends ping to server 
+
+IF player registered == x players
+THEN
+    gameserver starts game
+
+    pc -> getmap
+    pc shows map
+
+    (endless) 
+        round starts
+        pc -> commands
+        rounds end
+        gameserver calculates round
+        IF gameserver: game over ?
+        THEN    
+            end all
+        FI
+FI

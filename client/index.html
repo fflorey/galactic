@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- comment -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Galatic Empire</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <header>
+    <nav class="red darken-1" role="navigation">
+      <div class="nav-wrapper container">
+        <!-- a id="logo-container" href="#" class="brand-logo">Logo</a -->
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="./info.html">About</a>
+          </li>
+          <li>
+            <a href="./settings.html">Settings</a>
+          </li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li>
+            <a href="./info.html">About</a>
+          </li>
+          <li>
+            <a href="./settings.html">Settings</a>
+          </li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br>
+        <br>
+        <h1 class="header center black-text">Galactic Empire</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Simply play a nice and relaxing round of Galactic empire. Are you ready to be the real imperator? Just choose a
+            name a for your player!<br>BTW, as you are a great imperator (and we all know it) you should restrict yourself 
+          to 8 characters for your name... This is due to technical limitations (you know, the old 8+3 filename convention).</h5>
+        </div>
+        <div class="row center">
+          <form class="col s12">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">child_care</i>
+              <input id="pname" type="text" class="validate" data-length="8">
+              <label for="name">your players name</label>
+            </div>
+          </form>
+        </div>
+        <div class="row center">
+          <a class="waves-effect red darken-1 waves-light btn" onclick="startGame();">Los! Imperare!</a>
+        </div>
+        <br/>
+        <br/>
+      </div>
+    </div>
+
+
+  </main>
+  <footer class="page-footer red darken-2">
+    <div class="footer-copyright">
+      <div class="container">
+        Super game, simple PWA, made by
+        <a class="orange-text text-lighten-3" href="https://thinkitdifferent-de.blogspot.de/">G.H.F. Florey</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="/main.js"></script>
+
+
+</body>
+
+</html>

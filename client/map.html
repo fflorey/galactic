@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- comment -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Info - PWA simple</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="manifest" href="manifest.json">
+  
+</head>
+
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;border-style:solid}
+  .tg td{font-family:Arial, sans-serif;font-size:14px;padding:2px 2px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+  .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:8px 3px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+</style>
+
+<body>
+  <nav class="red darken-1" role="navigation">
+    <div class="nav-wrapper container">
+      <!-- a id="logo-container" href="#" class="brand-logo">Logo</a -->
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="./index.html">Start</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <a href="/index.html">Start</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col s10" >
+        <div class="row"><h5 class="col s6">Your command, imperator:</h5>
+      
+    </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <input placeholder="Placeholder" id="from_planet" type="text" class="validate">
+          <label for="from_planet">From</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="to_planet" type="text" class="validate">
+          <label for="to_planet">To</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="ships" type="text" class="validate">
+          <label for="ships">Ships</label>
+        </div>
+        <div class="col s3">
+        <button class="btn waves-effect waves-light" onclick="newCmd();">Ok</button>
+        </div>
+            <!-- a class="waves-effect red darken-1 waves-light btn col s1" onclick="startGame();">Go!</a-->
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="col s12" >
+      <ul class="tabs .tabs-fixed-width">
+        <li class="tab col">
+          <a href="#mapplaceholder">Map</a>
+        </li>
+        <li class="tab col">
+          <a href="#planetsplaceholder">Planets</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col s12" id="mapplaceholder"></div>
+    <div class="col s12" id="planetsplaceholder"></div>
+  </div>
+
+  </div>
+
+  <footer class="page-footer red darken-2">
+
+    <div class="footer-copyright">
+      <div class="container">
+        Simple PWA, made by
+        <a class="orange-text text-lighten-3" href="https://thinkitdifferent-de.blogspot.de/">G.H.F. Florey</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="./map.js"></script>
+
+</body>
+
+</html>
